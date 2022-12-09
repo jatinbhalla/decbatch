@@ -10,3 +10,10 @@ study what is different ways of git hub cloning from authentication prospective.
 
 1.https
 2.ssh
+
+
+activity 3
+try commands
+1.git diff
+2.git stash
+3.git revert
