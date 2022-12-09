@@ -1,4 +1,5 @@
 task-8 dec
+
 Activity 1
 Step1: create a local repo
 step2: create 3 files in main branch
@@ -6,14 +7,24 @@ step3: create repo in git hub
 step4: push changes on git hub
 
 activity 2
+
 study what is different ways of git hub cloning from authentication prospective.
 
 1.https
 2.ssh
 
+9 dec
 
 activity 3
+
 try commands
 1.git diff
 2.git stash
 3.git revert
+
+activity 4
+
+try all commands from this git cheat sheet https://education.github.com/git-cheat-sheet-education.pdf
+
+activity 5
+find difference between git clone and fork command
