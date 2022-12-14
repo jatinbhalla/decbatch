@@ -28,3 +28,21 @@ try all commands from this git cheat sheet https://education.github.com/git-chea
 
 activity 5
 find difference between git clone and fork command
+
+14 dec
+
+activity6
+find difference between EAR,JAR,WAR
+
+activity 7
+read the article and if possible setup jenkins on aws,azure,local
+aws: https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
+azure: https://learn.microsoft.com/en-us/azure/developer/jenkins/configure-on-linux-vm
+
+check and create a list of compilers for all programming languages
+nodejs-
+dot net-
+java-
+python-
+ruby-
+
