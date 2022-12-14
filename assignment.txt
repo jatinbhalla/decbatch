@@ -39,10 +39,15 @@ read the article and if possible setup jenkins on aws,azure,local
 aws: https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 azure: https://learn.microsoft.com/en-us/azure/developer/jenkins/configure-on-linux-vm
 
+activity 8
 check and create a list of compilers for all programming languages
 nodejs-
 dot net-
 java-
 python-
 ruby-
+
+activity 9
+
+create vm on any cloud service provider and install maven
 
