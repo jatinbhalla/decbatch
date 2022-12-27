@@ -51,3 +51,7 @@ activity 9
 
 create vm on any cloud service provider and install maven
 
+activity 10
+
+ci pipeline for terraform on jenkins to create 1 vm
+
