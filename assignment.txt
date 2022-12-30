@@ -55,3 +55,15 @@ activity 10
 
 ci pipeline for terraform on jenkins to create 1 vm
 
+
+Activity 11
+
+create ansible playbook
+task1: you have to install ngnix on group1
+task2: install tomcat on group2
+
+group1: 1vm
+group2:1 vm
+
+when you will hit ip address of group1 server it should show hello world group1
+when you will hit ip address of group2 server it should show hello world group2
