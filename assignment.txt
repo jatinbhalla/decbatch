@@ -67,3 +67,17 @@ group2:1 vm
 
 when you will hit ip address of group1 server it should show hello world group1
 when you will hit ip address of group2 server it should show hello world group2
+
+
+Activity 12 try below docker commands
+
+docker pull
+docker images
+docker run -it -d 
+docker docker ps
+docker ps -a
+docker exec -it "container id" bash
+docker stop
+docker kill
+docker rm
+docker rmi
