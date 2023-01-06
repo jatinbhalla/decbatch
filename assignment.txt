@@ -81,3 +81,10 @@ docker stop
 docker kill
 docker rm
 docker rmi
+
+Activity 13
+
+docker volumes of each type
+hand on for docker linking
+create more docker files and try different commands
+
