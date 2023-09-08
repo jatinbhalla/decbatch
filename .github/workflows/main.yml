@@ -1,0 +1,34 @@
+name: Store JSON in Environment Variable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set JSON as an environment variable
+      run: |
+        # Your JSON input as a string
+        json_input='{"key1": "value1", "key2": "value2"}'
+        
+        # Set the JSON string as an environment variable
+        echo "JSON_INPUT=$json_input" >> $GITHUB_ENV
+
+    - name: Display environment variable
+      run: |
+        echo "JSON input as an environment variable:"
+        echo "$JSON_INPUT"
+
+    - name: Use the JSON input
+      run: |
+        # Deserialize the JSON string back into a JSON object
+        json_object=$(echo "$JSON_INPUT" | jq .)
+        echo "Parsed JSON:"
+        echo "$json_object"
