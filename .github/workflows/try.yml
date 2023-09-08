@@ -1,4 +1,4 @@
-name: Store JSON in Environment Variable
+name: Variable
 
 on:
   push:
