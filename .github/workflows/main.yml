@@ -19,7 +19,7 @@ jobs:
     - name: Azure PowerShell output
       shell: pwsh
       run: |
-        write-host "${{ env.outputsummaryenv }}"
+        write-host "${env:outputsummaryenv }"
 
       
     
