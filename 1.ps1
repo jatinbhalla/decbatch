@@ -1,4 +1,4 @@
-output='{"value1": "abc",
+$output='{"value1": "abc",
 "value2": "def"
 
 }'
