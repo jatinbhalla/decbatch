@@ -1,4 +1,4 @@
-name: Pass PowerShell Output to Another Task (Windows)
+name: Store JSON in Environment Variable
 
 on:
   push:
@@ -6,25 +6,34 @@ on:
       - master
 
 jobs:
-  powershell_task:
-    runs-on: windows-latest
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Run PowerShell Script
-      id: powershell-output
-      shell: powershell
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set JSON as an environment variable
       run: |
-        # Your PowerShell script here
-        $output = "This is the output of the PowerShell script."
-        echo "##vso[task.setvariable variable=my_output;isOutput=true]$output"
+        # Your JSON input as a string
+        json_input='{
+        "key1": "value1", 
+        "key2": "value2"
+        }' 
+        json_input1=$json_input | convertTo-Json
+        
+        # Set the JSON string as an environment variable
+        echo "JSON_INPUT=$json_input1" >> $GITHUB_ENV
 
-  another_task:
-    runs-on: windows-latest
-
-    steps:
-    - name: Use PowerShell Output
-      shell: powershell
+    - name: Display environment variable
       run: |
-        # Access the PowerShell output from the previous step
-        $myOutput = $env:my_output
-        Write-Host "Output from the PowerShell script: ${env:myOutput}"
+        echo "JSON input as an environment variable:"
+        echo "$JSON_INPUT"
+
+    - name: Use the JSON input
+      run: |
+        # Deserialize the JSON string back into a JSON object
+        json_object=$(echo "$JSON_INPUT" | convertFrom-json)
+        echo "Parsed JSON:"
+        echo "$json_object"
+        
