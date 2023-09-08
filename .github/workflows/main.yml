@@ -19,9 +19,7 @@ jobs:
     - name: Azure PowerShell output
       shell: pwsh
       run: |
-        echo "$outputsummaryenv"
-        echo "hi ${env:outputsummaryenv}"
-      
+        write-host "$outputsummaryenv"
 
       
     
