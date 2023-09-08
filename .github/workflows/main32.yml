@@ -13,8 +13,8 @@ jobs:
         run: |
           # Define a hash table in PowerShell
           $hashTable = @{
-              key1 = "value1"
-              key2 = "value2"
+            key1 = 'value1'
+            key2 = 'value2'
           }
           
           # Serialize to JSON
