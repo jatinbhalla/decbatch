@@ -30,3 +30,12 @@ jobs:
         $myHashtable = $myHashtableJson | ConvertTo-Json | ConvertFrom-Json
         Write-Host "Hashtable key1: $($myHashtable.key1)"
         Write-Host "Hashtable key2: $($myHashtable.key2)"
+        
+    - name: Use Hashtable Variable
+      shell: pwsh
+      run: |
+        $myHashtableJson = $env:MY_HASHTABLE
+        $myHashtable = $myHashtableJson | ConvertFrom-Json
+        Write-Host "Hashtable key1: $($myHashtable.key1)"
+        Write-Host "Hashtable key2: $($myHashtable.key2)"
+    
