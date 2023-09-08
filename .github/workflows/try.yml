@@ -16,10 +16,7 @@ jobs:
     - name: Set JSON as an environment variable
       run: |
         # Your JSON input as a string
-        json_input='{
-        "key1": "value1", 
-        "key2": "value2"
-        }' 
+        json_input='{"key1": "value1", "key2": "value2"}' 
         json_input1=$json_input | convertTo-Json
         
         # Set the JSON string as an environment variable
