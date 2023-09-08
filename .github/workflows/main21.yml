@@ -36,9 +36,9 @@ jobs:
       shell: pwsh
       run: |
         $myHashtableJson = $env.MY_HASH_TABLE
-        $myHashtable = $myHashtableJson | ConvertFrom-Json
         # Display the entire hash table
         echo "${{ env.MY_HASH_TABLE }}"
+        $myHashtable = $myHashtableJson | ConvertFrom-Json
         Write-Host "Hashtable key1: $($myHashtable.key1)"
         Write-Host "Hashtable key2: $($myHashtable.key2)"
     
