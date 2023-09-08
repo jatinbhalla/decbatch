@@ -3,7 +3,7 @@ name: Store and Print Environment Variable
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   store-variable:
