@@ -22,10 +22,7 @@ jobs:
     - name: Set Hashtable as Environment Variable
       shell: pwsh
       run: |
-        $myHashtable = @{
-          key1 = 'value1'
-          key2 = 'value2'
-        }
+        $myHashtable = '{"key1": "value1", "key2": "value2"}'
         $myHashtableJson = $myHashtable | ConvertTo-Json
       
         echo "MY_HASH_TABLE=$myHashtableJson" | Out-File -FilePath $env:GITHUB_ENV -Append
