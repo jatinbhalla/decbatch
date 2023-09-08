@@ -18,10 +18,12 @@ jobs:
         # Your JSON input as a string
         json_input='{
         "key1": "value1", 
-        "key2": "value2"}'
+        "key2": "value2"
+        }' 
+        json_input1=$json_input | convert to json
         
         # Set the JSON string as an environment variable
-        echo "JSON_INPUT=$json_input" >> $GITHUB_ENV
+        echo "JSON_INPUT=$json_input1" >> $GITHUB_ENV
 
     - name: Display environment variable
       run: |
