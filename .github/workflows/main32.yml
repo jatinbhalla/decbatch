@@ -13,9 +13,7 @@ jobs:
         shell: pwsh
         run: |
           # Define a hash table in PowerShell
-          $hashTable = @{
-            key1 = 'value1'
-           }    
+          $hashTable = @{key1 = 'value1'}    
           # Serialize to JSON
           $jsonString = $hashTable | ConvertTo-Json
           
