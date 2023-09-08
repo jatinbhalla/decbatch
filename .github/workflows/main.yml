@@ -3,7 +3,7 @@ name: Store JSON in Environment Variable
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
