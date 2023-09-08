@@ -19,7 +19,7 @@ jobs:
     - name: Azure PowerShell output
       shell: pwsh
       run: |
-        $a = ${{ env.outputsummary }}
+        $a = $outputsummary | convertTo-Json
         write-output $a
         write-output $outputsummary
       
