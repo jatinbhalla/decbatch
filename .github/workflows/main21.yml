@@ -24,6 +24,7 @@ jobs:
       shell: pwsh
       run: |
         $myHashtableJson = $env:MY_HASHTABLE
+        $myHashtableJson
         $myHashtable = $myHashtableJson | ConvertFrom-Json
         Write-Host "Hashtable key1: $($myHashtable.key1)"
         Write-Host "Hashtable key2: $($myHashtable.key2)"
