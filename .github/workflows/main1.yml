@@ -12,11 +12,7 @@ jobs:
     steps:
     - name: Set GitHub Environment Variable
       run: echo "MY_ENV_VARIABLE=my_value" >> $GITHUB_ENV
-
-  print-variable:
-    runs-on: windows-latest
-
-    steps:
+  
     - name: Display Environment Variable (Windows)
       run: |
         echo "GitHub environment variable MY_ENV_VARIABLE is: $MY_ENV_VARIABLE"
