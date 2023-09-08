@@ -13,21 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Azure PowerShell Action
-      uses: Azure/powershell@v1
-      with:
-         inlineScript: |
+      shell: pwsh
+      run: |
             ./1.ps1
-      
-         azPSVersion: latest
     - name: Azure PowerShell output
-      uses: Azure/powershell@v1
-      with:
-         inlineScript: |
-            echo "$outputsummary"
-            write-host "{env:parameters.outputsummary.value}"
+      shell: pwsh
+      run: |
+        write-output = ${{env.outputsummary}}
       
-         azPSVersion: latest
-
 
       
     
