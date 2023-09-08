@@ -30,5 +30,10 @@ jobs:
     - name: Use Hashtable Variable
       shell: pwsh
       run: |
-        echo "${{ env.MY_HASH_TABLE }}" # This will output 'yellow'
+        echo "${{ env.MY_HASH_TABLE }}"
+        $myHashtable = ${{env.MY_HASH_TABLE }} | ConvertFrom-Json
+        echo "$myHashtable"
+        Write-Host "Hashtable key1: $($myHashtable.key1)"
+        Write-Host "Hashtable key2: $($myHashtable.key2)"
+    
     
