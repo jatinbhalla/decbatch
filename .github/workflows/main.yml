@@ -24,6 +24,7 @@ jobs:
       with:
          inlineScript: |
             echo "$outputsummary"
+            write-host "{env:parameters.outputsummary.value}"
       
          azPSVersion: latest
 
