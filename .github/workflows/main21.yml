@@ -23,7 +23,10 @@ jobs:
     - name: Use Hashtable from Environment Variable
       shell: pwsh
       run: |
-        $myHashtableJson = $env:MY_HASHTABLE
+        $myHashtable = @{
+          key1 = 'value1'
+          key2 = 'value2'
+        }
         $myHashtableJson
         $myHashtable = $myHashtableJson | ConvertFrom-Json
         Write-Host "Hashtable key1: $($myHashtable.key1)"
