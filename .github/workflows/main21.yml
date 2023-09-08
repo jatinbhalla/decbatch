@@ -27,7 +27,7 @@ jobs:
           key1 = 'value1'
           key2 = 'value2'
         }
-        $myHashtableJson
+        write-host "$myHashtableJson"
         $myHashtable = $myHashtableJson | ConvertFrom-Json
         Write-Host "Hashtable key1: $($myHashtable.key1)"
         Write-Host "Hashtable key2: $($myHashtable.key2)"
