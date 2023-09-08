@@ -7,33 +7,40 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Set JSON as an environment variable
-      run: |
-        # Your JSON input as a string
-        json_input='{
-        "key1": "value1", 
-        "key2": "value2"
-        }' 
-        json_input1=$json_input | convertTo-Json
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:
+         inlineScript: |
+            ./1.ps1
+      
+         azPSVersion: latest
+    
+    # - name: Set JSON as an environment variable
+    #   run: |
+    #     # Your JSON input as a string
+    #     json_input='{
+    #     "key1": "value1", 
+    #     "key2": "value2"
+    #     }' 
+    #     json_input1=$json_input | convertTo-Json
         
-        # Set the JSON string as an environment variable
-        echo "JSON_INPUT=$json_input1" >> $GITHUB_ENV
+    #     # Set the JSON string as an environment variable
+    #     echo "JSON_INPUT=$json_input1" >> $GITHUB_ENV
 
-    - name: Display environment variable
-      run: |
-        echo "JSON input as an environment variable:"
-        echo "$JSON_INPUT"
+    # - name: Display environment variable
+    #   run: |
+    #     echo "JSON input as an environment variable:"
+    #     echo "$JSON_INPUT"
 
-    - name: Use the JSON input
-      run: |
-        # Deserialize the JSON string back into a JSON object
-        json_object=$(echo "$JSON_INPUT" | convertFrom-json)
-        echo "Parsed JSON:"
-        echo "$json_object"
+    # - name: Use the JSON input
+    #   run: |
+    #     # Deserialize the JSON string back into a JSON object
+    #     json_object=$(echo "$JSON_INPUT" | convertFrom-json)
+    #     echo "Parsed JSON:"
+    #     echo "$json_object"
         
