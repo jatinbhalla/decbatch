@@ -27,4 +27,4 @@ jobs:
       run: |
         # Access the PowerShell output from the previous step
         $myOutput = $env:my_output
-        Write-Host "Output from the PowerShell script: $myOutput"
+        Write-Host "Output from the PowerShell script: ${{ env.myOutput }}"
