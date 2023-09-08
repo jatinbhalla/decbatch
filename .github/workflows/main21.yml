@@ -18,7 +18,8 @@ jobs:
           key2 = 'value2'
         }
         $myHashtableJson = $myHashtable | ConvertTo-Json
-        Write-Host "MY_HASHTABLE=$myHashtableJson" >> $GITHUB_ENV
+      
+        Write-Host "MY_HASH_TABLE=$myHashtableJson" | Out-File -Append $env:GITHUB_ENV
 
     - name: Use Hashtable from Environment Variable
       shell: pwsh
