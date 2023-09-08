@@ -3,7 +3,7 @@ name: Store Hashtable as Environment Variable
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   store_hashtable:
