@@ -3,7 +3,7 @@ name: Set JSON as Variable1 (Windows)
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   set_json_variable:
