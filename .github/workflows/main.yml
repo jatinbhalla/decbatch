@@ -19,6 +19,16 @@ jobs:
             ./1.ps1
       
          azPSVersion: latest
+    - name: Azure PowerShell output
+      uses: Azure/powershell@v1
+      with:
+         inlineScript: |
+            echo "$outputsummary"
+      
+         azPSVersion: latest
+
+
+      
     
     # - name: Set JSON as an environment variable
     #   run: |
