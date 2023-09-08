@@ -1,0 +1,37 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  use-hash-table:
+    runs-on: windows-latest
+    steps:
+      - name: Serialize hash table and set as environment variable
+        run: |
+          # Define a hash table in PowerShell
+          $hashTable = @{
+              key1 = "value1"
+              key2 = "value2"
+          }
+          
+          # Serialize to JSON
+          $jsonString = $hashTable | ConvertTo-Json
+          
+          # Set as environment variable for subsequent steps in this job
+          echo "MY_HASH_TABLE=$jsonString" | Out-File -Append $env:GITHUB_ENV
+        shell: powershell
+
+      - name: Deserialize and use hash table
+        run: |
+          # Deserialize from JSON string to hash table
+          $hashTableFromEnv = $env:MY_HASH_TABLE | ConvertFrom-Json
+          
+          # Display the entire hash table
+          $hashTableFromEnv
+          
+          # Example of extracting a specific key's value
+          Write-Output "Value for key1: $($hashTableFromEnv.key1)"
+        shell: powershell
