@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Serialize hash table and set as environment variable
-        shell: powershell
+        shell: pwsh
         run: |
           # Define a hash table in PowerShell
           $hashTable = @{
