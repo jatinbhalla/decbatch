@@ -10,20 +10,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Serialize hash table and set as environment variable
+        shell: powershell
         run: |
           # Define a hash table in PowerShell
           $hashTable = @{
             key1 = 'value1'
             key2 = 'value2'
-          }
-          
+          }    
           # Serialize to JSON
           $jsonString = $hashTable | ConvertTo-Json
           
           # Set as environment variable for subsequent steps in this job
           echo "MY_HASH_TABLE=$jsonString" | Out-File -Append $env:GITHUB_ENV
-        shell: powershell
-
+        
       - name: Deserialize and use hash table
         run: |
           # Deserialize from JSON string to hash table
