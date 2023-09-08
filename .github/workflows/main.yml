@@ -31,4 +31,4 @@ jobs:
         # Deserialize the JSON string back into a JSON object
         json_object=$(echo "$JSON_INPUT" | jq .)
         echo "Parsed JSON:"
-        echo "$json_object"
+        
