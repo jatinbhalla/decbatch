@@ -1,0 +1,37 @@
+name: t Variable
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  store_hashtable:
+    runs-on: windows-latest
+
+    steps:
+    - name: Set the value
+      id: step_one
+      run: |
+        echo "action_state=yellow" | Out-File -FilePath $env:GITHUB_ENV -Append # no need for -Encoding utf8
+    - name: Use the value
+      id: step_two
+      run: |
+        echo "${{ env.action_state }}" # This will output 'yellow'
+    
+    - name: Set Hashtable as Environment Variable
+      shell: pwsh
+      run: |
+        $myHashtable = @{
+          key1 = 'value1'
+          key2 = 'value2'
+        }
+        $myHashtableJson = $myHashtable | ConvertTo-Json
+      
+        echo "MY_HASH_TABLE=$myHashtableJson" | Out-File -FilePath $env:GITHUB_ENV -Append
+    
+    - name: Use Hashtable Variable
+      shell: pwsh
+      run: |
+        echo "${{ env.MY_HASH_TABLE }}" # This will output 'yellow'
+    
