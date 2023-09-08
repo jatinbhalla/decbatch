@@ -21,6 +21,7 @@ jobs:
       run: |
         $a = ${{ env.outputsummary }}
         write-output $a
+        write-output $outputsummary
       
 
       
