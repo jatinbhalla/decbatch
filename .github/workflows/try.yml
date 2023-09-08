@@ -1,0 +1,30 @@
+name: Pass PowerShell Output to Another Task (Windows)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  powershell_task:
+    runs-on: windows-latest
+
+    steps:
+    - name: Run PowerShell Script
+      id: powershell-output
+      shell: powershell
+      run: |
+        # Your PowerShell script here
+        $output = "This is the output of the PowerShell script."
+        echo "##vso[task.setvariable variable=my_output;isOutput=true]$output"
+
+  another_task:
+    runs-on: windows-latest
+
+    steps:
+    - name: Use PowerShell Output
+      shell: powershell
+      run: |
+        # Access the PowerShell output from the previous step
+        $myOutput = $env:my_output
+        Write-Host "Output from the PowerShell script: $myOutput"
