@@ -38,7 +38,7 @@ jobs:
         $myHashtableJson = $env.MY_HASH_TABLE
         $myHashtable = $myHashtableJson | ConvertFrom-Json
         # Display the entire hash table
-        $myHashtable
+        echo "${{ env.MY_HASH_TABLE }}"
         Write-Host "Hashtable key1: $($myHashtable.key1)"
         Write-Host "Hashtable key2: $($myHashtable.key2)"
     
