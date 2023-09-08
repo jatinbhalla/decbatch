@@ -16,7 +16,9 @@ jobs:
     - name: Set JSON as an environment variable
       run: |
         # Your JSON input as a string
-        json_input='{"key1": "value1", "key2": "value2"}'
+        json_input='{
+        "key1": "value1", 
+        "key2": "value2"}'
         
         # Set the JSON string as an environment variable
         echo "JSON_INPUT=$json_input" >> $GITHUB_ENV
@@ -29,6 +31,7 @@ jobs:
     - name: Use the JSON input
       run: |
         # Deserialize the JSON string back into a JSON object
-        json_object=$(echo "$JSON_INPUT" | jq .)
+        json_object=$(echo "$JSON_INPUT" | convertFrom-json)
         echo "Parsed JSON:"
+        echo "$json_object"
         
