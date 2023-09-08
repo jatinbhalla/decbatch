@@ -4,4 +4,4 @@ $output='{"value1": "abc",
 }'
 $outputsummary = $output | ConvertTo-json
 write-output "here it is : $outputsummary"
-"parameters.outputsummary.value = $($outputsummary)">> $env:GITHUB_ENV
+"outputsummary = $($outputsummary)">> $env:GITHUB_ENV
