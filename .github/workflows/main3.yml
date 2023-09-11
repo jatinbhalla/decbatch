@@ -44,5 +44,5 @@ jobs:
     - name: Parse JSON
       shell: powershell
       run: |
-       "${{ env.action_state }} >> $env:GITHUB_STEP_SUMMARY
+       "${{ env.action_state }} >> "$env:GITHUB_STEP_SUMMARY"
        #./1.ps1 -outputsummary "${{ env.action_state }}"
