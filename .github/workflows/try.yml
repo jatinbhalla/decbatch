@@ -16,7 +16,8 @@ jobs:
     - name: Set JSON as an environment variable
       run: |
         # Your JSON input as a string
-        #json_input='{"key1": "value1", "key2": "value2"}'$Output = New-Object -TypeName Hashtable
+        #json_input='{"key1": "value1", "key2": "value2"}'
+        $Output = New-Object -TypeName Hashtable
         $Output.workspaceName = "az-dna-eun-law-subworkspace"
         $Output.businessCommonVNetName = "az-dna--vn-busicommonvn"
         $Output.businessCommonVNetCIDR = "192.168.0.0/24"
