@@ -16,9 +16,9 @@ jobs:
       run: |
         # Your JSON string here
         $Output = New-Object -TypeName Hashtable
-        $Output.workspaceName = "az-dna-eun-law-subworkspace"
-        $Output.businessCommonVNetName = "az-dna--vn-busicommonvn"
-        $Output.businessCommonVNetCIDR = "192.168.0.0/24"
+        $Output.workspaceName = "az"
+        $Output.businessCommonVNetName = "vn"
+        $Output.businessCommonVNetCIDR = "192"
         $Output
         $a= $Output | convertto-json
         $b=$Output | convertto-json |convertfrom-json
