@@ -44,7 +44,4 @@ jobs:
     - name: Parse JSON
       shell: powershell
       run: |
-        # Parse the JSON variable
-        $jsonObject = $myJson | ConvertFrom-Json
-        Write-Host "Parsed JSON object:"
-        $jsonObject | Format-Table -AutoSize
+            ./1.ps1 -outputsummary ${{ env.action_state }}
