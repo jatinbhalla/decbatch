@@ -18,6 +18,7 @@ jobs:
           key2 = 'value2'
         }
         $myHashtableJson = $myHashtable | ConvertTo-Json
+        $myHashtableJson
       
         Write-Host "MY_HASH_TABLE=$myHashtableJson" | Out-File -Append $env:GITHUB_ENV
 
@@ -35,10 +36,6 @@ jobs:
     - name: Use Hashtable Variable
       shell: pwsh
       run: |
-        $myHashtableJson = $env.MY_HASH_TABLE
-        # Display the entire hash table
         echo "${{ env.MY_HASH_TABLE }}"
-        $myHashtable = $myHashtableJson | ConvertFrom-Json
-        Write-Host "Hashtable key1: $($myHashtable.key1)"
-        Write-Host "Hashtable key2: $($myHashtable.key2)"
+    
     
