@@ -27,6 +27,8 @@ jobs:
         echo "##vso[task.setvariable variable=my_json2;isOutput=true]$b"
         $c=1234
         echo "##vso[task.setvariable variable=my_json3;isOutput=true]$c"
+        echo "action_state=$Output" | Out-File -FilePath $env:GITHUB_ENV -Append
+        
               
         
     - name: Use JSON Variable
@@ -41,6 +43,7 @@ jobs:
         Write-Host "JSON variable value: $myJson2"
         $myJson3 = "{{ $env:my_json3 }} "
         Write-Host "JSON variable value: $myJson3"
+        echo "${{ env.action_state }}" # This will output 'yellow'
 
 
 
