@@ -27,7 +27,7 @@ jobs:
         echo "##vso[task.setvariable variable=my_json2;isOutput=true]$b"
         $c=1234
         echo "##vso[task.setvariable variable=my_json3;isOutput=true]$c"
-        echo "action_state=$b" | Out-File -FilePath $env:GITHUB_ENV -Append
+        echo "action_state=$a" | Out-File -FilePath $env:GITHUB_ENV -Append
         
               
         
