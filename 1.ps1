@@ -5,6 +5,7 @@ param(
     
 )
 try {
+    $outputsummary=$outputsummary | convertfrom-json
     Write-Host "this is summary $outputsummary"
     }
 
