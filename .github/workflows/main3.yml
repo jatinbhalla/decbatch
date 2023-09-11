@@ -37,9 +37,9 @@ jobs:
         Write-Host "JSON variable value: $myJson"
         $myJson1 = $env:my_json1
         Write-Host "JSON variable value: $myJson1"
-        $myJson2 = $env:my_json2
+        $myJson2 = "{{ $env:my_json2 }} "
         Write-Host "JSON variable value: $myJson2"
-        $myJson3 = $env:my_json3
+        $myJson3 = "{{ $env:my_json3 }} "
         Write-Host "JSON variable value: $myJson3"
 
 
