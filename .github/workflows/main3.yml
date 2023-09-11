@@ -21,7 +21,7 @@ jobs:
         $Output.businessCommonVNetCIDR = "192"
         $Output
         $a= $Output | convertto-json
-        $b=$Output | convertto-json |convertfrom-json
+        $b=$Output |convertfrom-json
         echo "##vso[task.setvariable variable=my_json;isOutput=true]$Output"
         echo "##vso[task.setvariable variable=my_json1;isOutput=true]$a"
         echo "##vso[task.setvariable variable=my_json2;isOutput=true]$b"
