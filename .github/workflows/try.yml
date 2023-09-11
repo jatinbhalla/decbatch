@@ -16,10 +16,14 @@ jobs:
     - name: Set JSON as an environment variable
       run: |
         # Your JSON input as a string
-        json_input='{"key1": "value1", "key2": "value2"}'
+        #json_input='{"key1": "value1", "key2": "value2"}'$Output = New-Object -TypeName Hashtable
+        $Output.workspaceName = "az-dna-eun-law-subworkspace"
+        $Output.businessCommonVNetName = "az-dna--vn-busicommonvn"
+        $Output.businessCommonVNetCIDR = "192.168.0.0/24"
+        $Output
         
         # Set the JSON string as an environment variable
-        echo "JSON_INPUT=$json_input" >> $GITHUB_ENV
+        echo "JSON_INPUT=$Output" >> $GITHUB_ENV
     - name: Display environment variable
       run: |
         echo "JSON input as an environment variable:"
