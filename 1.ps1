@@ -1,7 +1,7 @@
 [CmdLetBinding()]
 param(
     # Mandatory params
-    [PSObject] $outputsummary 
+    [string] $outputsummary 
     
 )
 try {
