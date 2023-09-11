@@ -35,13 +35,7 @@ jobs:
       shell: powershell
       run: |
         # Access the JSON variable from the previous step
-        $myJson = $env:my_json
-        Write-Host "JSON variable value: $myJson"
-        $myJson1 = $env:my_json1
-        Write-Host "JSON variable value: $myJson1"
-        $myJson2 = "{{ $env:my_json2 }} "
-        Write-Host "JSON variable value: $myJson2"
-        $myJson3 = "{{ $env:my_json3 }} "
+        $myJson3 = "${{ env.action_state }} "
         Write-Host "JSON variable value: $myJson3"
         echo "${{ env.action_state }}" # This will output 'yellow'
 
