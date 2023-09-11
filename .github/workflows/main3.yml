@@ -44,4 +44,4 @@ jobs:
     - name: Parse JSON
       shell: powershell
       run: |
-            ./1.ps1 -outputsummary ${{ env.action_state }}
+            ./1.ps1 -outputsummary "${{ env.action_state }}"
